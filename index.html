@@ -359,8 +359,10 @@ header{background:transparent}
 @media (max-width:600px){
   .adcard:has(.thumb.has-shot),.adcard.big:has(.thumb.has-shot){grid-template-columns:1fr}
   .adcard.big .thumb.has-shot{aspect-ratio:9/16;max-height:none}
-  .thumb.has-shot{height:auto;aspect-ratio:4/5;min-height:0;border-right:0;border-bottom:1px solid var(--line)}
-  .thumb.has-shot img.shot{object-position:center 30%}
+  .thumb.has-shot{display:block;height:auto;aspect-ratio:auto;min-height:0;width:100%;border-right:0;border-bottom:1px solid var(--line)}
+  .thumb.has-shot img.shot{position:static;display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:center 30%}
+  .thumb.has-shot.post img.shot{object-fit:contain}
+  .adcard.big .thumb.has-shot img.shot{aspect-ratio:auto;height:auto;object-fit:contain}
 }
 @media (max-width:600px){
   body{padding:0 12px}
